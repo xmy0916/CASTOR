@@ -9,7 +9,7 @@ The *official* repository for [Pseudo Label Rectification With Joint Camera Shif
 ### Installation
 We provide packaged python packages, which can be directly downloaded and unzipped to your server.
 
-address: [python3](https://aistudio.baidu.com/aistudio/datasetdetail/185465https://aistudio.baidu.com/aistudio/datasetdetail/185465)
+address: [python3](https://aistudio.baidu.com/aistudio/datasetdetail/185465)
 ```shell
 # you can use this python package to run python scripts like:
 /yourpath/reid/bin/python hello_world.py
