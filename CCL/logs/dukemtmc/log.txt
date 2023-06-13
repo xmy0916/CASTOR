@@ -1,0 +1,45 @@
+==========
+Args:Namespace(arch='resnet50', batch_size=128, cam_eval=0.1, cam_init=0.1, cam_min=0.0, camera_model_dir='./examples/pretrained/camera_model/dukemtmc', data_dir='/mnt/bd/xmy-data-volume-2/CASTOR/CCL/examples/data', dataset='dukemtmcreid', dropout=0, email=None, epochs=120, eps=0.4, eps_gap=0.02, eval_step=10, features=0, height=256, iters=800, k1=30, k2=6, logs_dir='./logs/dukemtmc/', loss='ce', lr=0.000175, momentum=0.1, msg='market1501', num_instances=16, opt='Adam', pb_topk=7, pb_turns=5, pooling_type='avg', print_freq=10, resume=None, seed=1, step_size=20, temp=0.05, use_bnn=False, use_camera=True, use_hard=True, use_pb=True, use_teacher=False, weight_decay=0.0005, width=128, workers=2)
+==========
+==> Load unlabeled dataset
+=> DukeMTMC loaded
+Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   702 |    16522 |         8
+  query    |   702 |     2228 |         8
+  gallery  |  1110 |    17661 |         8
+  ----------------------------------------
+pooling_type: avg
+==> Create pseudo labels for unlabeled data
+Clustering criterion: eps: 0.400
+Extract Features: [50/130]	Time 0.170 (0.175)	Data 0.097 (0.054)	
+Extract Features: [100/130]	Time 0.094 (0.150)	Data 0.021 (0.053)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 25.138651371002197
+==> prepare camera dist matrix...
+==> Camera dist matrix not found, start calculating...
+pooling_type: gem
+Extract Features: [50/130]	Time 0.077 (0.133)	Data 0.000 (0.053)	
+Extract Features: [100/130]	Time 0.094 (0.128)	Data 0.017 (0.048)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 24.067623615264893
+Camera parameter is 0.1
+==> Start pulling back uncluster points...
+Round 1 the correct pull back number is 1301|3923
+Round 2 the correct pull back number is 2341|7867
+Round 3 the correct pull back number is 2756|9264
+Round 4 the correct pull back number is 2839|9513
+Round 5 the correct pull back number is 2856|9559
+==> Finish pulling uncluster points back!
+==> epoch:0' label acc is 0.2321147560827987
+==> Statistics for epoch 0: 448 clusters
+Epoch: [0][10/800]	Time 0.222 (0.230)	Data 0.000 (0.000)	Loss 5.242 (5.648)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][20/800]	Time 0.222 (0.227)	Data 0.000 (0.000)	Loss 5.487 (5.643)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][30/800]	Time 0.225 (0.226)	Data 0.000 (0.000)	Loss 5.571 (5.726)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][40/800]	Time 0.222 (0.226)	Data 0.000 (0.000)	Loss 5.875 (5.750)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][50/800]	Time 0.223 (0.225)	Data 0.000 (0.000)	Loss 6.134 (5.769)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][60/800]	Time 0.223 (0.235)	Data 0.000 (0.010)	Loss 5.723 (5.739)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][70/800]	Time 0.225 (0.234)	Data 0.000 (0.009)	Loss 6.755 (5.834)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][80/800]	Time 0.228 (0.233)	Data 0.000 (0.008)	Loss 7.198 (5.918)	TriL 0.000 (0.000)	SimL 0.000 (0.000)

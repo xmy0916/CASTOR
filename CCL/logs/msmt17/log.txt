@@ -1,0 +1,116 @@
+==========
+Args:Namespace(arch='resnet50', batch_size=128, cam_eval=0.1, cam_init=0.05, cam_min=0.0, camera_model_dir='./examples/pretrained/camera_model/msmt17/', data_dir='/mnt/bd/xmy-data-volume-2/CASTOR/CCL/examples/data', dataset='msmt17', dropout=0, email=None, epochs=120, eps=0.7, eps_gap=0.02, eval_step=10, features=0, height=256, iters=800, k1=30, k2=6, logs_dir='./logs/msmt17/', loss='ce', lr=0.000175, momentum=0.1, msg='msmt17', num_instances=16, opt='Adam', pb_topk=7, pb_turns=5, pooling_type='avg', print_freq=10, resume=None, seed=1, step_size=20, temp=0.05, use_bnn=False, use_camera=True, use_hard=False, use_pb=True, use_teacher=False, weight_decay=0.0005, width=128, workers=2)
+==========
+==> Load unlabeled dataset
+Using downloaded file: /mnt/bd/xmy-data-volume-2/CASTOR/CCL/examples/data/msmt17/MSMT17_V1
+MSMT17 dataset loaded
+  subset   | # ids | # images | #cam
+  -------------------------------
+  train    |  1041 |    32621 | 15
+  query    |  3060 |    11659 | 15
+  gallery  |  3060 |    82161 | 15
+pooling_type: avg
+==> Create pseudo labels for unlabeled data
+Clustering criterion: eps: 0.700
+Extract Features: [50/255]	Time 0.072 (0.253)	Data 0.000 (0.131)	
+Extract Features: [100/255]	Time 0.072 (0.234)	Data 0.000 (0.136)	
+Extract Features: [150/255]	Time 0.072 (0.224)	Data 0.000 (0.134)	
+Extract Features: [200/255]	Time 0.072 (0.216)	Data 0.000 (0.130)	
+Extract Features: [250/255]	Time 0.084 (0.218)	Data 0.000 (0.134)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 58.55608344078064
+==> prepare camera dist matrix...
+==> Camera dist matrix not found, start calculating...
+pooling_type: gem
+Extract Features: [50/255]	Time 0.076 (0.219)	Data 0.000 (0.140)	
+Extract Features: [100/255]	Time 0.077 (0.222)	Data 0.000 (0.142)	
+Extract Features: [150/255]	Time 0.078 (0.217)	Data 0.000 (0.137)	
+Extract Features: [200/255]	Time 0.183 (0.213)	Data 0.106 (0.133)	
+Extract Features: [250/255]	Time 0.076 (0.214)	Data 0.000 (0.134)	
+Computing jaccard distance...
+Jaccard distance computing time cost: 59.40212893486023
+Camera parameter is 0.05
+==> Start pulling back uncluster points...
+Round 1 the correct pull back number is 1034|3525
+Round 2 the correct pull back number is 1256|4214
+Round 3 the correct pull back number is 1295|4306
+Round 4 the correct pull back number is 1301|4320
+Round 5 the correct pull back number is 1302|4321
+==> Finish pulling uncluster points back!
+==> epoch:0' label acc is 0.086263449924895
+==> Statistics for epoch 0: 380 clusters
+Epoch: [0][10/800]	Time 0.235 (0.243)	Data 0.000 (0.000)	Loss 5.067 (5.332)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][20/800]	Time 0.239 (0.240)	Data 0.000 (0.000)	Loss 5.408 (5.326)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][30/800]	Time 0.234 (0.238)	Data 0.000 (0.000)	Loss 5.472 (5.389)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][40/800]	Time 0.234 (0.237)	Data 0.000 (0.000)	Loss 5.628 (5.430)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][50/800]	Time 0.236 (0.255)	Data 0.000 (0.018)	Loss 4.906 (5.401)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][60/800]	Time 0.235 (0.252)	Data 0.001 (0.015)	Loss 5.542 (5.302)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][70/800]	Time 0.233 (0.251)	Data 0.000 (0.013)	Loss 6.330 (5.279)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][80/800]	Time 0.234 (0.249)	Data 0.000 (0.012)	Loss 4.734 (5.247)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][90/800]	Time 0.245 (0.248)	Data 0.000 (0.010)	Loss 4.551 (5.206)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][100/800]	Time 0.234 (0.256)	Data 0.000 (0.019)	Loss 4.913 (5.145)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][110/800]	Time 0.235 (0.254)	Data 0.000 (0.017)	Loss 4.548 (5.124)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][120/800]	Time 0.234 (0.253)	Data 0.000 (0.016)	Loss 5.549 (5.119)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][130/800]	Time 0.236 (0.252)	Data 0.000 (0.015)	Loss 4.538 (5.110)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][140/800]	Time 0.235 (0.251)	Data 0.000 (0.014)	Loss 5.055 (5.091)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][150/800]	Time 0.236 (0.258)	Data 0.000 (0.020)	Loss 2.000 (5.000)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][160/800]	Time 0.238 (0.256)	Data 0.000 (0.019)	Loss 5.035 (4.954)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][170/800]	Time 0.234 (0.255)	Data 0.000 (0.018)	Loss 5.364 (4.920)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][180/800]	Time 0.235 (0.254)	Data 0.000 (0.017)	Loss 3.383 (4.870)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][190/800]	Time 0.243 (0.258)	Data 0.000 (0.020)	Loss 3.323 (4.837)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][200/800]	Time 0.234 (0.257)	Data 0.000 (0.019)	Loss 4.092 (4.770)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][210/800]	Time 0.235 (0.256)	Data 0.000 (0.018)	Loss 4.475 (4.726)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][220/800]	Time 0.240 (0.255)	Data 0.000 (0.018)	Loss 3.587 (4.694)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][230/800]	Time 0.234 (0.254)	Data 0.000 (0.017)	Loss 2.808 (4.648)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][240/800]	Time 0.241 (0.256)	Data 0.000 (0.019)	Loss 3.123 (4.592)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][250/800]	Time 0.234 (0.255)	Data 0.000 (0.018)	Loss 4.197 (4.544)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][260/800]	Time 0.234 (0.255)	Data 0.000 (0.018)	Loss 3.125 (4.513)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][270/800]	Time 0.235 (0.254)	Data 0.000 (0.017)	Loss 3.639 (4.467)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][280/800]	Time 0.234 (0.253)	Data 0.000 (0.016)	Loss 3.715 (4.433)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][290/800]	Time 0.235 (0.255)	Data 0.000 (0.018)	Loss 2.731 (4.392)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][300/800]	Time 0.235 (0.255)	Data 0.000 (0.018)	Loss 2.277 (4.361)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][310/800]	Time 0.236 (0.254)	Data 0.000 (0.017)	Loss 4.039 (4.335)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][320/800]	Time 0.241 (0.254)	Data 0.000 (0.017)	Loss 3.817 (4.314)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][330/800]	Time 0.928 (0.255)	Data 0.687 (0.018)	Loss 2.749 (4.281)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][340/800]	Time 0.235 (0.255)	Data 0.000 (0.018)	Loss 4.601 (4.252)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][350/800]	Time 0.234 (0.254)	Data 0.000 (0.017)	Loss 2.600 (4.218)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][360/800]	Time 0.235 (0.254)	Data 0.000 (0.017)	Loss 3.589 (4.189)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][370/800]	Time 0.242 (0.253)	Data 0.000 (0.016)	Loss 4.029 (4.169)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][380/800]	Time 0.242 (0.255)	Data 0.000 (0.018)	Loss 3.837 (4.139)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][390/800]	Time 0.234 (0.255)	Data 0.000 (0.017)	Loss 2.670 (4.111)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][400/800]	Time 0.237 (0.254)	Data 0.000 (0.017)	Loss 3.105 (4.089)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][410/800]	Time 0.245 (0.254)	Data 0.000 (0.017)	Loss 2.819 (4.075)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][420/800]	Time 0.242 (0.253)	Data 0.000 (0.016)	Loss 3.744 (4.057)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][430/800]	Time 0.235 (0.255)	Data 0.000 (0.018)	Loss 2.146 (4.036)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][440/800]	Time 0.244 (0.255)	Data 0.000 (0.018)	Loss 3.117 (4.014)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][450/800]	Time 0.235 (0.255)	Data 0.000 (0.018)	Loss 3.683 (3.997)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][460/800]	Time 0.236 (0.255)	Data 0.000 (0.017)	Loss 2.863 (3.967)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][470/800]	Time 0.309 (0.254)	Data 0.000 (0.017)	Loss 2.806 (3.956)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][480/800]	Time 0.237 (0.255)	Data 0.000 (0.018)	Loss 3.286 (3.940)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][490/800]	Time 0.236 (0.255)	Data 0.000 (0.018)	Loss 1.935 (3.922)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][500/800]	Time 0.240 (0.255)	Data 0.000 (0.017)	Loss 2.429 (3.903)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][510/800]	Time 0.235 (0.254)	Data 0.000 (0.017)	Loss 3.077 (3.884)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][520/800]	Time 0.314 (0.256)	Data 0.079 (0.018)	Loss 4.107 (3.868)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][530/800]	Time 0.235 (0.255)	Data 0.000 (0.018)	Loss 2.281 (3.848)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][540/800]	Time 0.234 (0.255)	Data 0.000 (0.018)	Loss 2.433 (3.830)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][550/800]	Time 0.235 (0.255)	Data 0.000 (0.017)	Loss 3.520 (3.811)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][560/800]	Time 0.245 (0.254)	Data 0.000 (0.017)	Loss 3.259 (3.793)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][570/800]	Time 0.234 (0.255)	Data 0.000 (0.018)	Loss 2.311 (3.781)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][580/800]	Time 0.245 (0.255)	Data 0.000 (0.018)	Loss 2.127 (3.762)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][590/800]	Time 0.235 (0.255)	Data 0.000 (0.018)	Loss 2.541 (3.745)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][600/800]	Time 0.238 (0.255)	Data 0.000 (0.017)	Loss 2.310 (3.724)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][610/800]	Time 0.234 (0.254)	Data 0.000 (0.017)	Loss 2.903 (3.704)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][620/800]	Time 0.243 (0.256)	Data 0.000 (0.018)	Loss 2.587 (3.681)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][630/800]	Time 0.234 (0.255)	Data 0.000 (0.018)	Loss 1.699 (3.668)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][640/800]	Time 0.235 (0.255)	Data 0.000 (0.018)	Loss 2.412 (3.653)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][650/800]	Time 0.239 (0.255)	Data 0.000 (0.017)	Loss 2.260 (3.638)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][660/800]	Time 0.236 (0.256)	Data 0.000 (0.018)	Loss 2.530 (3.626)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][670/800]	Time 0.238 (0.255)	Data 0.000 (0.018)	Loss 3.660 (3.613)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][680/800]	Time 0.235 (0.255)	Data 0.000 (0.018)	Loss 2.415 (3.597)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][690/800]	Time 0.234 (0.255)	Data 0.000 (0.018)	Loss 4.424 (3.587)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][700/800]	Time 0.245 (0.255)	Data 0.000 (0.017)	Loss 2.632 (3.577)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][710/800]	Time 0.276 (0.256)	Data 0.038 (0.018)	Loss 3.502 (3.565)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][720/800]	Time 0.239 (0.256)	Data 0.000 (0.019)	Loss 2.466 (3.549)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][730/800]	Time 0.244 (0.256)	Data 0.000 (0.018)	Loss 1.760 (3.537)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][740/800]	Time 0.234 (0.255)	Data 0.000 (0.018)	Loss 2.221 (3.527)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
+Epoch: [0][750/800]	Time 0.236 (0.255)	Data 0.000 (0.018)	Loss 2.416 (3.518)	TriL 0.000 (0.000)	SimL 0.000 (0.000)
